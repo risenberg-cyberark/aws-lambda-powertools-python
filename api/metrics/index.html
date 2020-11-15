@@ -165,10 +165,8 @@ def single_metric(name: str, unit: MetricUnit, value: float, namespace: str = No
         metric: SingleMetric = SingleMetric(namespace=namespace)
         metric.add_metric(name=name, unit=unit, value=value)
         yield metric
-        logger.debug(&#34;Serializing single metric&#34;)
         metric_set: Dict = metric.serialize_metric_set()
     finally:
-        logger.debug(&#34;Publishing single metric&#34;, {&#34;metric&#34;: metric})
         print(json.dumps(metric_set))</code></pre>
 </details>
 </dd>
@@ -562,7 +560,6 @@ def do_something():
                 else:
                     metrics = self.serialize_metric_set()
                     self.clear_metrics()
-                    logger.debug(&#34;Publishing metrics&#34;, {&#34;metrics&#34;: metrics})
                     print(json.dumps(metrics))
 
             return response
@@ -580,9 +577,10 @@ def do_something():
         global is_cold_start
         if is_cold_start:
             logger.debug(&#34;Adding cold start metric and function_name dimension&#34;)
-            self.add_metric(name=&#34;ColdStart&#34;, value=1, unit=&#34;Count&#34;)
-            self.add_dimension(name=&#34;function_name&#34;, value=context.function_name)
-            is_cold_start = False</code></pre>
+            with single_metric(name=&#34;ColdStart&#34;, unit=MetricUnit.Count, value=1, namespace=self.namespace) as metric:
+                metric.add_dimension(name=&#34;function_name&#34;, value=context.function_name)
+                metric.add_dimension(name=&#34;service&#34;, value=self.service)
+                is_cold_start = False</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -699,7 +697,6 @@ tracer = Tracer(service="payment")
             else:
                 metrics = self.serialize_metric_set()
                 self.clear_metrics()
-                logger.debug(&#34;Publishing metrics&#34;, {&#34;metrics&#34;: metrics})
                 print(json.dumps(metrics))
 
         return response
