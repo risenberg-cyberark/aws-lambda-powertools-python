@@ -554,13 +554,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#bringing-your-own-envelope" class="md-nav__link">
-    bringing your own envelope
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -727,13 +720,6 @@
           <li class="md-nav__item">
   <a href="#built-in-envelopes" class="md-nav__link">
     built-in envelopes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bringing-your-own-envelope" class="md-nav__link">
-    bringing your own envelope
   </a>
   
 </li>
@@ -1071,6 +1057,10 @@
 <td><strong>SnsModel</strong></td>
 <td>Lambda Event Source payload for Amazon Simple Notification Service</td>
 </tr>
+<tr>
+<td><strong>APIGatewayProxyEvent</strong></td>
+<td>Lambda Event Source payload for Amazon API Gateway</td>
+</tr>
 </tbody>
 </table>
 <h3 id="extending-built-in-models">extending built-in models<a class="headerlink" href="#extending-built-in-models" title="Permanent link">&para;</a></h3>
@@ -1316,9 +1306,18 @@
 <td>1. Parses data using <code>SqsModel</code>. <br/> 2. Parses SNS records in <code>body</code> key using <code>SnsNotificationModel</code>. <br/> 3. Parses data in <code>Message</code> key using your model and return them in a list.</td>
 <td><code>List[Model]</code></td>
 </tr>
+<tr>
+<td><strong>ApiGatewayEnvelope</strong>         1. Parses data using <code>APIGatewayProxyEventModel</code>. <br/> 2. Parses <code>body</code> key using your model and returns it.</td>
+<td><code>Model</code></td>
+<td></td>
+</tr>
+<tr>
+<td>### bringing your own envelope</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h3 id="bringing-your-own-envelope">bringing your own envelope<a class="headerlink" href="#bringing-your-own-envelope" title="Permanent link">&para;</a></h3>
 <p>You can create your own Envelope model and logic by inheriting from <code>BaseEnvelope</code>, and implementing the <code>parse</code> method.</p>
 <p>Here's a snippet of how the EventBridge envelope we demonstrated previously is implemented.</p>
 <p><strong>EventBridge Model</strong></p>
@@ -1728,7 +1727,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-04-05
+      Last update: 2021-04-21
     
   </small>
 </div>

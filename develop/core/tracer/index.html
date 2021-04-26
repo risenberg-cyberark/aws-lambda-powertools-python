@@ -837,11 +837,11 @@
     <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::Serverless::Function</span>
     <span class="nt">Properties</span><span class="p">:</span>
       <span class="nt">Runtime</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python3.8</span>
-      <span class="nt">Tracing</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Active</span>
-<span class="hll">      <span class="nt">Environment</span><span class="p">:</span>
-</span>        <span class="nt">Variables</span><span class="p">:</span>
-          <span class="nt">POWERTOOLS_SERVICE_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example</span>
-</code></pre></div>
+<span class="hll">      <span class="nt">Tracing</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Active</span>
+</span>      <span class="nt">Environment</span><span class="p">:</span>
+        <span class="nt">Variables</span><span class="p">:</span>
+<span class="hll">          <span class="nt">POWERTOOLS_SERVICE_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example</span>
+</span></code></pre></div>
 </td></tr></table>
 </div>
 </div>
@@ -959,9 +959,9 @@ decorated function response contains a file-like object or a <a href="https://bo
 
 <span class="n">tracer</span> <span class="o">=</span> <span class="n">Tracer</span><span class="p">()</span>
 
-<span class="nd">@tracer</span><span class="o">.</span><span class="n">capture_method</span>
-<span class="hll"><span class="k">async</span> <span class="k">def</span> <span class="nf">collect_payment</span><span class="p">():</span>
-</span>    <span class="o">...</span>
+<span class="hll"><span class="nd">@tracer</span><span class="o">.</span><span class="n">capture_method</span>
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">collect_payment</span><span class="p">():</span>
+    <span class="o">...</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1300,7 +1300,7 @@ decorated function response contains a file-like object or a <a href="https://bo
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-04-05
+      Last update: 2021-04-19
     
   </small>
 </div>
