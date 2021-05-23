@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -291,6 +291,7 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+      
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Logger
           <span class="md-nav__icon md-icon"></span>
@@ -302,6 +303,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
   
@@ -369,8 +371,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#structure_logs-method" class="md-nav__link">
-    structure_logs method
+  <a href="#append_keys-method" class="md-nav__link">
+    append_keys method
   </a>
   
 </li>
@@ -391,6 +393,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-additional-keys" class="md-nav__link">
+    Removing additional keys
+  </a>
   
 </li>
         
@@ -429,6 +438,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lambdapowertoolsformatter" class="md-nav__link">
+    LambdaPowertoolsFormatter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#migrating-from-other-loggers" class="md-nav__link">
     Migrating from other Loggers
   </a>
@@ -458,34 +474,49 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#reordering-log-keys-position" class="md-nav__link">
+    Reordering log keys position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-timestamp-to-utc" class="md-nav__link">
     Setting timestamp to UTC
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-your-code" class="md-nav__link">
-    Testing your code
+          <li class="md-nav__item">
+  <a href="#custom-function-for-unserializable-values" class="md-nav__link">
+    Custom function for unserializable values
   </a>
   
-    <nav class="md-nav" aria-label="Testing your code">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#pytest-live-log-feature" class="md-nav__link">
-    Pytest live log feature
+  <a href="#bring-your-own-handler" class="md-nav__link">
+    Bring your own handler
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bring-your-own-formatter" class="md-nav__link">
+    Bring your own formatter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bring-your-own-json-serializer" class="md-nav__link">
+    Bring your own JSON serializer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -498,6 +529,33 @@
   <a href="#built-in-correlation-id-expressions" class="md-nav__link">
     Built-in Correlation ID expressions
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-code" class="md-nav__link">
+    Testing your code
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing your code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inject-lambda-context" class="md-nav__link">
+    Inject Lambda Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest-live-log-feature" class="md-nav__link">
+    Pytest live log feature
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -556,6 +614,18 @@
     <li class="md-nav__item">
       <a href="../event_handler/appsync/" class="md-nav__link">
         Appsync
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_handler/api_gateway/" class="md-nav__link">
+        API Gateway
       </a>
     </li>
   
@@ -717,6 +787,7 @@
   
   
   
+  
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
@@ -781,8 +852,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#structure_logs-method" class="md-nav__link">
-    structure_logs method
+  <a href="#append_keys-method" class="md-nav__link">
+    append_keys method
   </a>
   
 </li>
@@ -803,6 +874,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-additional-keys" class="md-nav__link">
+    Removing additional keys
+  </a>
   
 </li>
         
@@ -841,6 +919,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lambdapowertoolsformatter" class="md-nav__link">
+    LambdaPowertoolsFormatter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#migrating-from-other-loggers" class="md-nav__link">
     Migrating from other Loggers
   </a>
@@ -870,34 +955,49 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#reordering-log-keys-position" class="md-nav__link">
+    Reordering log keys position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-timestamp-to-utc" class="md-nav__link">
     Setting timestamp to UTC
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-your-code" class="md-nav__link">
-    Testing your code
+          <li class="md-nav__item">
+  <a href="#custom-function-for-unserializable-values" class="md-nav__link">
+    Custom function for unserializable values
   </a>
   
-    <nav class="md-nav" aria-label="Testing your code">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#pytest-live-log-feature" class="md-nav__link">
-    Pytest live log feature
+  <a href="#bring-your-own-handler" class="md-nav__link">
+    Bring your own handler
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bring-your-own-formatter" class="md-nav__link">
+    Bring your own formatter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bring-your-own-json-serializer" class="md-nav__link">
+    Bring your own JSON serializer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -910,6 +1010,33 @@
   <a href="#built-in-correlation-id-expressions" class="md-nav__link">
     Built-in Correlation ID expressions
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-code" class="md-nav__link">
+    Testing your code
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing your code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inject-lambda-context" class="md-nav__link">
+    Inject Lambda Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest-live-log-feature" class="md-nav__link">
+    Pytest live log feature
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1008,58 +1135,60 @@
 </div>
 </div>
 <h3 id="standard-structured-keys">Standard structured keys<a class="headerlink" href="#standard-structured-keys" title="Permanent link">&para;</a></h3>
-<p>Your Logger will include the following keys to your structured logging, by default:</p>
+<p>Your Logger will include the following keys to your structured logging:</p>
 <table>
 <thead>
 <tr>
 <th>Key</th>
-<th>Type</th>
 <th>Example</th>
-<th>Description</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>timestamp</strong></td>
-<td>str</td>
-<td>"2020-05-24 18:17:33,774"</td>
-<td>Timestamp of actual log statement</td>
-</tr>
-<tr>
-<td><strong>level</strong></td>
-<td>str</td>
-<td>"INFO"</td>
+<td><strong>level</strong>: <code>str</code></td>
+<td><code>INFO</code></td>
 <td>Logging level</td>
 </tr>
 <tr>
-<td><strong>location</strong></td>
-<td>str</td>
-<td>"collect.handler:1"</td>
+<td><strong>location</strong>: <code>str</code></td>
+<td><code>collect.handler:1</code></td>
 <td>Source code location where statement was executed</td>
 </tr>
 <tr>
-<td><strong>service</strong></td>
-<td>str</td>
-<td>"payment"</td>
-<td>Service name defined. "service_undefined" will be used if unknown</td>
+<td><strong>message</strong>: <code>Any</code></td>
+<td><code>Collecting payment</code></td>
+<td>Unserializable JSON values are casted as <code>str</code></td>
 </tr>
 <tr>
-<td><strong>sampling_rate</strong></td>
-<td>int</td>
-<td>0.1</td>
-<td>Debug logging sampling rate in percentage e.g. 10% in this case</td>
+<td><strong>timestamp</strong>: <code>str</code></td>
+<td><code>2021-05-03 10:20:19,650+0200</code></td>
+<td>Timestamp with milliseconds, by default uses local timezone</td>
 </tr>
 <tr>
-<td><strong>message</strong></td>
-<td>any</td>
-<td>"Collecting payment"</td>
-<td>Log statement value. Unserializable JSON values will be casted to string</td>
+<td><strong>service</strong>: <code>str</code></td>
+<td><code>payment</code></td>
+<td>Service name defined, by default <code>service_undefined</code></td>
 </tr>
 <tr>
-<td><strong>xray_trace_id</strong></td>
-<td>str</td>
-<td>"1-5759e988-bd862e3fe1be46a994272793"</td>
-<td>X-Ray Trace ID when Lambda function has enabled Tracing</td>
+<td><strong>xray_trace_id</strong>: <code>str</code></td>
+<td><code>1-5759e988-bd862e3fe1be46a994272793</code></td>
+<td>When <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html" target="_blank">tracing is enabled</a>, it shows X-Ray Trace ID</td>
+</tr>
+<tr>
+<td><strong>sampling_rate</strong>: <code>float</code></td>
+<td><code>0.1</code></td>
+<td>When enabled, it shows sampling rate in percentage e.g. 10%</td>
+</tr>
+<tr>
+<td><strong>exception_name</strong>: <code>str</code></td>
+<td><code>ValueError</code></td>
+<td>When <code>logger.exception</code> is used and there is an exception</td>
+</tr>
+<tr>
+<td><strong>exception</strong>: <code>str</code></td>
+<td><code>Traceback (most recent call last)..</code></td>
+<td>When <code>logger.exception</code> is used and there is an exception</td>
 </tr>
 </tbody>
 </table>
@@ -1081,12 +1210,12 @@
 <span class="normal">13</span>
 <span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
 <span class="hll"><span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span>
 </span><span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
- <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
- <span class="o">...</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
+
  <span class="c1"># You can log entire objects too</span>
  <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">({</span>
     <span class="s2">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;collect_payment&quot;</span><span class="p">,</span>
@@ -1123,36 +1252,32 @@
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-<span class="hll">  <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
-</span><span class="hll">  <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
-</span><span class="hll">  <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
-</span><span class="hll">  <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
-</span><span class="hll">  <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span>  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">},</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span>
+</span><span class="p">},</span>
 <span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:15&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
-  <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="hll">    <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;collect_payment&quot;</span><span class="p">,</span>
-</span><span class="hll">    <span class="nt">&quot;charge_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ch_AZFlk2345C0&quot;</span>
-</span>  <span class="p">}</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:10&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="hll">        <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;collect_payment&quot;</span><span class="p">,</span>
+</span><span class="hll">        <span class="nt">&quot;charge_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ch_AZFlk2345C0&quot;</span>
+</span><span class="hll">    <span class="p">},</span>
+</span>    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -1163,35 +1288,29 @@
 <thead>
 <tr>
 <th>Key</th>
-<th>Type</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>cold_start</strong></td>
-<td>bool</td>
-<td>false</td>
+<td><strong>cold_start</strong>: <code>bool</code></td>
+<td><code>false</code></td>
 </tr>
 <tr>
-<td><strong>function_name</strong></td>
-<td>str</td>
-<td>"example-powertools-HelloWorldFunction-1P1Z6B39FLU73"</td>
+<td><strong>function_name</strong> <code>str</code></td>
+<td><code>example-powertools-HelloWorldFunction-1P1Z6B39FLU73</code></td>
 </tr>
 <tr>
-<td><strong>function_memory_size</strong></td>
-<td>int</td>
-<td>128</td>
+<td><strong>function_memory_size</strong>: <code>int</code></td>
+<td><code>128</code></td>
 </tr>
 <tr>
-<td><strong>function_arn</strong></td>
-<td>str</td>
-<td>"arn:aws:lambda:eu-west-1:012345678910:function:example-powertools-HelloWorldFunction-1P1Z6B39FLU73"</td>
+<td><strong>function_arn</strong>: <code>str</code></td>
+<td><code>arn:aws:lambda:eu-west-1:012345678910:function:example-powertools-HelloWorldFunction-1P1Z6B39FLU73</code></td>
 </tr>
 <tr>
-<td><strong>function_request_id</strong></td>
-<td>str</td>
-<td>"899856cb-83d1-40d7-8611-9e78f15f32f4"</td>
+<td><strong>function_request_id</strong>: <code>str</code></td>
+<td><code>899856cb-83d1-40d7-8611-9e78f15f32f4</code></td>
 </tr>
 </tbody>
 </table>
@@ -1210,7 +1329,7 @@
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
 <span class="hll"><span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span><span class="p">(</span><span class="n">log_event</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
@@ -1220,9 +1339,6 @@
 </div>
 </div>
 <h4 id="setting-a-correlation-id">Setting a Correlation ID<a class="headerlink" href="#setting-a-correlation-id" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>New in 1.12.0</p>
-</blockquote>
 <p>You can set a Correlation ID using <code>correlation_id_path</code> param by passing a <a href="https://jmespath.org/tutorial.html" target="_blank">JMESPath expression</a>.</p>
 <div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">collect.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1231,15 +1347,13 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
-<span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span><span class="p">(</span><span class="n">correlation_id_path</span><span class="o">=</span><span class="s2">&quot;headers.my_request_id_header&quot;</span><span class="p">)</span>
-<span class="hll"><span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-</span>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
-    <span class="o">...</span>
+<span class="hll"><span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span><span class="p">(</span><span class="n">correlation_id_path</span><span class="o">=</span><span class="s2">&quot;headers.my_request_id_header&quot;</span><span class="p">)</span>
+</span><span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1257,23 +1371,31 @@
 </td></tr></table>
 </div>
 <input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="hll">  <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span><span class="p">,</span>
-</span>  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1287,16 +1409,14 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 <span class="hll"><span class="kn">from</span> <span class="nn">aws_lambda_powertools.logging</span> <span class="kn">import</span> <span class="n">correlation_paths</span>
 </span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
-<span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span><span class="p">(</span><span class="n">correlation_id_path</span><span class="o">=</span><span class="n">correlation_paths</span><span class="o">.</span><span class="n">API_GATEWAY_REST</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="hll"><span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span><span class="p">(</span><span class="n">correlation_id_path</span><span class="o">=</span><span class="n">correlation_paths</span><span class="o">.</span><span class="n">API_GATEWAY_REST</span><span class="p">)</span>
+</span><span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
-    <span class="o">...</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1314,56 +1434,72 @@
 </td></tr></table>
 </div>
 <input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="hll">  <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span><span class="p">,</span>
-</span>  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:8&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
 <h3 id="appending-additional-keys">Appending additional keys<a class="headerlink" href="#appending-additional-keys" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Keys might be persisted across invocations</p>
+<p>Always set additional keys as part of your handler to ensure they have the latest value. Additional keys are kept in memory as part of a Logger instance and might be reused in non-cold start scenarios.</p>
+</div>
 <p>You can append additional keys using either mechanism:</p>
 <ul>
-<li>Persist new keys across all future log messages via <code>structure_logs</code> method</li>
+<li>Persist new keys across all future log messages via <code>append_keys</code> method</li>
 <li>Add additional keys on a per log message basis via <code>extra</code> parameter</li>
 </ul>
-<h4 id="structure_logs-method">structure_logs method<a class="headerlink" href="#structure_logs-method" title="Permanent link">&para;</a></h4>
-<p>You can append your own keys to your existing Logger via <code>structure_logs(append=True, **kwargs)</code> method.</p>
+<h4 id="append_keys-method">append_keys method<a class="headerlink" href="#append_keys-method" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>Omitting <code>append=True</code> will reset the existing structured logs to standard keys + keys provided as arguments</p>
+<p>NOTE: <code>append_keys</code> replaces <code>structure_logs(append=True, **kwargs)</code> method. Both will continue to work until the next major version.</p>
 </blockquote>
+<p>You can append your own keys to your existing Logger via <code>append_keys(**additional_key_values)</code> method.</p>
 <div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">collect.py</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
  <span class="n">order_id</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;order_id&quot;</span><span class="p">)</span>
-<span class="hll"> <span class="n">logger</span><span class="o">.</span><span class="n">structure_logs</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="n">order_id</span><span class="p">)</span>
-</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
-    <span class="o">...</span>
+
+ <span class="c1"># this will ensure order_id key always has the latest value before logging</span>
+<span class="hll"> <span class="n">logger</span><span class="o">.</span><span class="n">append_keys</span><span class="p">(</span><span class="n">order_id</span><span class="o">=</span><span class="n">order_id</span><span class="p">)</span>
+</span>
+ <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1375,29 +1511,24 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="hll">  <span class="nt">&quot;order_id&quot;</span><span class="p">:</span> <span class="s2">&quot;order_id_value&quot;</span><span class="p">,</span>
-</span>  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">}</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:11&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;order_id&quot;</span><span class="p">:</span> <span class="s2">&quot;order_id_value&quot;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Logger will automatically reject any key with a None value</p>
-<p>If you conditionally add keys depending on the payload, you can use the highlighted line above as an example.</p>
-<p>This example will add <code>order_id</code> if its value is not empty, and in subsequent invocations where <code>order_id</code> might not be present it'll remove it from the logger.</p>
+<p>If you conditionally add keys depending on the payload, you can follow the example above.</p>
+<p>This example will add <code>order_id</code> if its value is not empty, and in subsequent invocations where <code>order_id</code> might not be present it'll remove it from the Logger.</p>
 </div>
 <h4 id="extra-parameter">extra parameter<a class="headerlink" href="#extra-parameter" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>New in 1.10.0</p>
-</blockquote>
 <p>Extra parameter is available for all log levels' methods, as implemented in the standard logging library - e.g. <code>logger.info, logger.warning</code>.</p>
 <p>It accepts any dictionary, and all keyword arguments will be added as part of the root structure of the logs for that log statement.</p>
 <div class="admonition info">
@@ -1408,12 +1539,14 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
 <span class="n">fields</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1123&quot;</span> <span class="p">}</span>
-
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
-</code></pre></div>
+<span class="hll"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
+</span></code></pre></div>
 </td></tr></table>
 </div>
 <input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
@@ -1424,24 +1557,19 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-12 14:08:12,357&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="hll">  <span class="nt">&quot;request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1123&quot;</span><span class="p">,</span>
-</span>  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">}</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1123&quot;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
 <h4 id="set_correlation_id-method">set_correlation_id method<a class="headerlink" href="#set_correlation_id-method" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>New in 1.12.0</p>
-</blockquote>
 <p>You can set a correlation_id to your existing Logger via <code>set_correlation_id(value)</code> method by passing any string value.</p>
 <div class="tabbed-set" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">collect.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1450,15 +1578,13 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">set_correlation_id</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s2">&quot;requestContext&quot;</span><span class="p">][</span><span class="s2">&quot;requestId&quot;</span><span class="p">])</span>
 </span>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
-    <span class="o">...</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1483,41 +1609,37 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-<span class="hll">  <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span><span class="p">,</span>
-</span>  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">}</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
 <p>Alternatively, you can combine <a href="../../utilities/data_classes/">Data Classes utility</a> with Logger to use dot notation object:</p>
 <div class="tabbed-set" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">collect.py</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 <span class="hll"><span class="kn">from</span> <span class="nn">aws_lambda_powertools.utilities.data_classes</span> <span class="kn">import</span> <span class="n">APIGatewayProxyEvent</span>
 </span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="hll">    <span class="n">event</span> <span class="o">=</span> <span class="n">APIGatewayProxyEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 </span><span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">set_correlation_id</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">request_context</span><span class="o">.</span><span class="n">request_id</span><span class="p">)</span>
 </span>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
-    <span class="o">...</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1546,7 +1668,7 @@
 <span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
   <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:9&quot;</span><span class="p">,</span>
   <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
   <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
 <span class="hll">  <span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;correlation_id_value&quot;</span><span class="p">,</span>
@@ -1556,30 +1678,29 @@
 </td></tr></table>
 </div>
 </div>
-<h3 id="logging-exceptions">Logging exceptions<a class="headerlink" href="#logging-exceptions" title="Permanent link">&para;</a></h3>
-<p>When logging exceptions, Logger will add new keys named <code>exception_name</code> and <code>exception</code> with the full traceback as a string.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<blockquote>
-<p>New in 1.12.0</p>
-</blockquote>
-<p>You can use your preferred Log Analytics tool to enumerate exceptions across all your services using <code>exception_name</code> key.</p>
-</div>
-<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">logging_an_exception.py</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+<h3 id="removing-additional-keys">Removing additional keys<a class="headerlink" href="#removing-additional-keys" title="Permanent link">&para;</a></h3>
+<p>You can remove any additional key from Logger state using <code>remove_keys</code>.</p>
+<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">collect.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="k">try</span><span class="p">:</span>
-     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;something went wrong&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="hll">     <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Received an exception&quot;</span><span class="p">)</span>
-</span></code></pre></div>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">append_keys</span><span class="p">(</span><span class="n">sample_key</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
+
+<span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">([</span><span class="s2">&quot;sample_key&quot;</span><span class="p">])</span>
+</span>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment without sample key&quot;</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 </div>
 <input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
@@ -1592,16 +1713,73 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-   <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;module&gt;:4&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Received an exception&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-08-28 18:11:38,886&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;service_undefined&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-   <span class="nt">&quot;exception_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ValueError&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;exception&quot;</span><span class="p">:</span> <span class="s2">&quot;Traceback (most recent call last):\n  File \&quot;&lt;input&gt;\&quot;, line 2, in &lt;module&gt;\nValueError: something went wrong&quot;</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;sample_key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
+</span><span class="p">},</span>
+<span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:10&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment without sample key&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span>
 <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="logging-exceptions">Logging exceptions<a class="headerlink" href="#logging-exceptions" title="Permanent link">&para;</a></h3>
+<p>Use <code>logger.exception</code> method to log contextual information about exceptions. Logger will include <code>exception_name</code> and <code>exception</code> keys to aid troubleshooting and error enumeration.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use your preferred Log Analytics tool to enumerate and visualize exceptions across all your services using <code>exception_name</code> key.</p>
+</div>
+<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">collect.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;something went wrong&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="hll">     <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Received an exception&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Received an exception&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;exception_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ValueError&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;exception&quot;</span><span class="p">:</span> <span class="s2">&quot;Traceback (most recent call last):\n  File \&quot;&lt;input&gt;\&quot;, line 2, in &lt;module&gt;\nValueError: something went wrong&quot;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1609,7 +1787,7 @@
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
 <h3 id="reusing-logger-across-your-code">Reusing Logger across your code<a class="headerlink" href="#reusing-logger-across-your-code" title="Permanent link">&para;</a></h3>
 <p>Logger supports inheritance via <code>child</code> parameter. This allows you to create multiple Loggers across your code base, and propagate changes such as new keys to all Loggers.</p>
-<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">collect.py</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">collect.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1628,7 +1806,7 @@
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">shared.py</label><div class="tabbed-content">
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">shared.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1650,42 +1828,38 @@
 <p>If you forget to use <code>child</code> param but the <code>service</code> name is the same of the parent, we will return the existing parent <code>Logger</code> instead.</p>
 </div>
 <h3 id="sampling-debug-logs">Sampling debug logs<a class="headerlink" href="#sampling-debug-logs" title="Permanent link">&para;</a></h3>
-<p>Use sampling when you want to dynamically change your log level to DEBUG based on a <strong>percentage of your concurrent/cold start invocations</strong>.</p>
-<p>You can set using <code>POWERTOOLS_LOGGER_SAMPLE_RATE</code> env var or explicitly with <code>sample_rate</code> parameter: Values range from <code>0.0</code> to <code>1</code> (100%)</p>
+<p>Use sampling when you want to dynamically change your log level to <strong>DEBUG</strong> based on a <strong>percentage of your concurrent/cold start invocations</strong>.</p>
+<p>You can use values ranging from <code>0.0</code> to <code>1</code> (100%) when setting <code>POWERTOOLS_LOGGER_SAMPLE_RATE</code> env var or <code>sample_rate</code> parameter in Logger.</p>
 <div class="admonition tip">
 <p class="admonition-title">When is this useful?</p>
-<p>Take for example a sudden increase in concurrency. When looking into logs you might not have enough information, and while you can adjust log levels it might not happen again.</p>
+<p>Let's imagine a sudden spike increase in concurrency triggered a transient issue downstream. When looking into the logs you might not have enough information, and while you can adjust log levels it might not happen again.</p>
 <p>This feature takes into account transient issues where additional debugging information can be useful.</p>
 </div>
-<p>Sampling decision happens at the Logger class initialization. This means sampling may happen significantly more or less than you expect if you have a steady low number of invocations and thus few cold starts.</p>
+<p>Sampling decision happens at the Logger initialization. This means sampling may happen significantly more or less than depending on your traffic patterns, for example a steady low number of invocations and thus few cold starts.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you want Logger to calculate sampling upon every invocation, please open a <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/new?assignees=&amp;labels=feature-request%2C+triage&amp;template=feature_request.md&amp;title=">feature request</a>.</p>
 </div>
-<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">collect.py</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">collect.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
 <span class="c1"># Sample 10% of debug logs e.g. 0.1</span>
-<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">sample_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">sample_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </span>
 <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-<span class="hll"> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Verifying whether order_id is present&quot;</span><span class="p">)</span>
-</span> <span class="k">if</span> <span class="s2">&quot;order_id&quot;</span> <span class="ow">in</span> <span class="n">event</span><span class="p">:</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
-    <span class="o">...</span>
+<span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Verifying whether order_id is present&quot;</span><span class="p">)</span>
+</span>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1711,35 +1885,96 @@
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-   <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
-</span>   <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-</span>   <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Verifying whether order_id is present&quot;</span>
-<span class="p">}</span>
-
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="hll">    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:7&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Verifying whether order_id is present&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.1</span>
+</span><span class="p">},</span>
 <span class="p">{</span>
-   <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-</span>   <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span>
-<span class="p">}</span>
+<span class="hll">    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.1</span>
+</span><span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="lambdapowertoolsformatter">LambdaPowertoolsFormatter<a class="headerlink" href="#lambdapowertoolsformatter" title="Permanent link">&para;</a></h3>
+<p>Logger propagates a few formatting configurations to the built-in <code>LambdaPowertoolsFormatter</code> logging formatter.</p>
+<p>If you prefer configuring it separately, or you'd want to bring this JSON Formatter to another application, these are the supported settings:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>json_serializer</code></strong></td>
+<td>function to serialize <code>obj</code> to a JSON formatted <code>str</code></td>
+<td><code>json.dumps</code></td>
+</tr>
+<tr>
+<td><strong><code>json_deserializer</code></strong></td>
+<td>function to deserialize <code>str</code>, <code>bytes</code>, <code>bytearray</code> containing a JSON document to a Python obj</td>
+<td><code>json.loads</code></td>
+</tr>
+<tr>
+<td><strong><code>json_default</code></strong></td>
+<td>function to coerce unserializable values, when no custom serializer/deserializer is set</td>
+<td><code>str</code></td>
+</tr>
+<tr>
+<td><strong><code>datefmt</code></strong></td>
+<td>string directives (strftime) to format log timestamp</td>
+<td><code>%Y-%m-%d %H:%M:%S,%F%z</code>, where <code>%F</code> is a custom ms directive</td>
+</tr>
+<tr>
+<td><strong><code>utc</code></strong></td>
+<td>set logging timestamp to UTC</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><strong><code>log_record_order</code></strong></td>
+<td>set order of log keys when logging</td>
+<td><code>["level", "location", "message", "timestamp"]</code></td>
+</tr>
+<tr>
+<td><strong><code>kwargs</code></strong></td>
+<td>key-value to be included in log messages</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">LambdaPowertoolsFormatter.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">aws_lambda_powertools.logging.formatter</span> <span class="kn">import</span> <span class="n">LambdaPowertoolsFormatter</span>
+</span>
+<span class="hll"><span class="n">formatter</span> <span class="o">=</span> <span class="n">LambdaPowertoolsFormatter</span><span class="p">(</span><span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log_record_order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">])</span>
+</span><span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">logger_formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">)</span>
+</span></code></pre></div>
 </td></tr></table>
 </div>
 </div>
@@ -1748,42 +1983,17 @@
 <h4 id="the-service-parameter">The service parameter<a class="headerlink" href="#the-service-parameter" title="Permanent link">&para;</a></h4>
 <p>Service is what defines the Logger name, including what the Lambda function is responsible for, or part of (e.g payment service).</p>
 <p>For Logger, the <code>service</code> is the logging key customers can use to search log operations for one or more functions - For example, <strong>search for all errors, or messages like X, where service is payment</strong>.</p>
-<details class="tip"><summary>Logging output example</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-   <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-24 18:17:33,774&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:1&quot;</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-</span>   <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Verifying whether order_id is present&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</details>
 <h4 id="inheriting-loggers">Inheriting Loggers<a class="headerlink" href="#inheriting-loggers" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Python Logging hierarchy happens via the dot notation: <code>service</code>, <code>service.child</code>, <code>service.child_2</code></p>
 </blockquote>
 <p>For inheritance, Logger uses a <code>child=True</code> parameter along with <code>service</code> being the same value across Loggers.</p>
 <p>For child Loggers, we introspect the name of your module where <code>Logger(child=True, service="name")</code> is called, and we name your Logger as <strong>{service}.{filename}</strong>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
 <p>A common issue when migrating from other Loggers is that <code>service</code> might be defined in the parent Logger (no child param), and not defined in the child Logger:</p>
-<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">incorrect_logger_inheritance.py</label><div class="tabbed-content">
+</div>
+<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">incorrect_logger_inheritance.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1806,7 +2016,7 @@
 </span></code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">correct_logger_inheritance.py</label><div class="tabbed-content">
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">correct_logger_inheritance.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1837,71 +2047,81 @@
 </div>
 <h4 id="overriding-log-records">Overriding Log records<a class="headerlink" href="#overriding-log-records" title="Permanent link">&para;</a></h4>
 <p>You might want to continue to use the same date formatting style, or override <code>location</code> to display the <code>package.function_name:line_number</code> as you previously had.</p>
-<p>Logger allows you to either change the format or suppress the following keys altogether at the initialization: <code>location</code>, <code>timestamp</code>, <code>level</code>, <code>xray_trace_id</code>, and <code>datefmt</code>. However, <code>sampling_rate</code> key is part of the specification and cannot be suppressed.</p>
-<div class="admonition note">
-<p class="admonition-title"><code>xray_trace_id</code> logging key</p>
-<p>This key is only added if X-Ray Tracing is enabled for your Lambda function. Once enabled, this key allows the integration between CloudWatch Logs and Service Lens.</p>
-</div>
-<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">lambda_handler.py</label><div class="tabbed-content">
+<p>Logger allows you to either change the format or suppress the following keys altogether at the initialization: <code>location</code>, <code>timestamp</code>, <code>level</code>, <code>xray_trace_id</code>.</p>
+<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">lambda_handler.py</label><div class="tabbed-content">
 <blockquote>
-<p>We honour standard <a href="https://docs.python.org/3/howto/logging.html#displaying-the-date-time-in-messages">logging library string formats</a>.</p>
+<p>We honour standard <a href="https://docs.python.org/3/howto/logging.html#displaying-the-date-time-in-messages" target="_blank">logging library string formats</a>.</p>
 </blockquote>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="c1"># override default values for location and timestamp format</span>
-<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;[</span><span class="si">%(funcName)s</span><span class="s2">] </span><span class="si">%(module)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y %I:%M:%S %p&quot;</span><span class="p">)</span>
+<span class="n">date_format</span> <span class="o">=</span> <span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y %I:%M:%S %p&quot;</span>
+<span class="n">location_format</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">%(funcName)s</span><span class="s2">] </span><span class="si">%(module)s</span><span class="s2">&quot;</span>
+
+<span class="c1"># override location and timestamp format</span>
+<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">location_format</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="n">date_format</span><span class="p">)</span>
 </span>
-<span class="c1"># suppress location key</span>
-<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">stdout</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span></code></pre></div>
+<span class="c1"># suppress the location key with a None value</span>
+<span class="hll"><span class="n">logger_two</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="hll">    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;[&lt;module&gt;] scratch&quot;</span><span class="p">,</span>
-</span>    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;hello world&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;[&lt;module&gt;] lambda_handler&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
 <span class="hll">    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;02/09/2021 09:25:17 AM&quot;</span><span class="p">,</span>
-</span>    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;service_undefined&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span>
+</span>    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
-<h5 id="reordering-log-records-position">Reordering log records position<a class="headerlink" href="#reordering-log-records-position" title="Permanent link">&para;</a></h5>
-<p>You can also change the order of the following log record keys via the <code>log_record_order</code> parameter: <code>level</code>, <code>location</code>, <code>message</code>, <code>xray_trace_id</code>, and <code>timestamp</code></p>
-<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">lambda_handler.py</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<h4 id="reordering-log-keys-position">Reordering log keys position<a class="headerlink" href="#reordering-log-keys-position" title="Permanent link">&para;</a></h4>
+<p>You can change the order of <a href="#standard-structured-keys">standard Logger keys</a> or any keys that will be appended later at runtime via the <code>log_record_order</code> parameter.</p>
+<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">lambda_handler.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
 <span class="c1"># make message as the first key</span>
-<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">stdout</span><span class="p">,</span> <span class="n">log_record_order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">])</span>
+<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">log_record_order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">])</span>
 </span>
-<span class="c1"># Default key sorting order</span>
-<span class="hll"><span class="c1"># Logger(stream=stdout, log_record_order=[&quot;level&quot;,&quot;location&quot;,&quot;message&quot;,&quot;timestamp&quot;])</span>
-</span></code></pre></div>
+<span class="c1"># make request_id that will be added later as the first key</span>
+<span class="hll"><span class="c1"># Logger(service=&quot;payment&quot;, log_record_order=[&quot;request_id&quot;])</span>
+</span>
+<span class="c1"># Default key sorting order when omit</span>
+<span class="c1"># Logger(service=&quot;payment&quot;, log_record_order=[&quot;level&quot;,&quot;location&quot;,&quot;message&quot;,&quot;timestamp&quot;])</span>
+</code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1922,8 +2142,28 @@
 </div>
 </div>
 <h4 id="setting-timestamp-to-utc">Setting timestamp to UTC<a class="headerlink" href="#setting-timestamp-to-utc" title="Permanent link">&para;</a></h4>
-<p>By default, this Logger and standard logging library emits records using local time timestamp. You can override this behaviour by updating the current converter set in our formatter:</p>
-<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">app.py</label><div class="tabbed-content">
+<p>By default, this Logger and standard logging library emits records using local time timestamp. You can override this behaviour via <code>utc</code> parameter:</p>
+<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">app.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Local time&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="n">logger_in_utc</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span class="n">logger_in_utc</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;GMT time zone&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h4 id="custom-function-for-unserializable-values">Custom function for unserializable values<a class="headerlink" href="#custom-function-for-unserializable-values" title="Permanent link">&para;</a></h4>
+<p>By default, Logger uses <code>str</code> to handle values non-serializable by JSON. You can override this behaviour via <code>json_default</code> parameter by passing a Callable:</p>
+<div class="tabbed-set" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">collect.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1934,25 +2174,277 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
-</span>
-<span class="hll"><span class="kn">import</span> <span class="nn">time</span>
-</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;sample_service&quot;</span><span class="p">)</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Local time&quot;</span><span class="p">)</span>
-
-<span class="hll"><span class="n">logger</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">formatter</span><span class="o">.</span><span class="n">converter</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span>
+<span class="hll"><span class="k">def</span> <span class="nf">custom_json_default</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+</span><span class="hll">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;non-serializable: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
 </span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;GMT time&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Unserializable</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">json_default</span><span class="o">=</span><span class="n">custom_json_default</span><span class="p">)</span>
+</span>
+<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">Unserializable</span><span class="p">())</span>
+</span></code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><label for="__tabbed_19_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;collect.handler:8&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="err">&lt;</span><span class="kc">n</span><span class="err">o</span><span class="kc">n</span><span class="mi">-</span><span class="err">serializable</span><span class="p">:</span> <span class="err">U</span><span class="kc">nser</span><span class="err">ializable&gt;</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 15:17:23,632+0200&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
+<h4 id="bring-your-own-handler">Bring your own handler<a class="headerlink" href="#bring-your-own-handler" title="Permanent link">&para;</a></h4>
+<p>By default, Logger uses StreamHandler and logs to standard output. You can override this behaviour via <code>logger_handler</code> parameter:</p>
+<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">collect.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="hll">
+</span><span class="hll"><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+</span>
+<span class="n">log_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tmp/log.json&quot;</span><span class="p">)</span>
+<span class="n">log_file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">log_file</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">logger_handler</span><span class="o">=</span><span class="n">log_file_handler</span><span class="p">)</span>
+<span class="hll">
+</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h4 id="bring-your-own-formatter">Bring your own formatter<a class="headerlink" href="#bring-your-own-formatter" title="Permanent link">&para;</a></h4>
+<p>By default, Logger uses <a href="#lambdapowertoolsformatter">LambdaPowertoolsFormatter</a> that persists its custom structure between non-cold start invocations. There could be scenarios where the existing feature set isn't sufficient to your formatting needs.</p>
+<p>For <strong>minor changes like remapping keys</strong> after all log record processing has completed, you can override <code>serialize</code> method from <a href="#lambdapowertoolsformatter">LambdaPowertoolsFormatter</a>:</p>
+<div class="tabbed-set" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">custom_formatter.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">aws_lambda_powertools.logging.formatter</span> <span class="kn">import</span> <span class="n">LambdaPowertoolsFormatter</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+
+<span class="k">class</span> <span class="nc">CustomFormatter</span><span class="p">(</span><span class="n">LambdaPowertoolsFormatter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Serialize final structured log dict to JSON str&quot;&quot;&quot;</span>
+        <span class="n">log</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">)</span>  <span class="c1"># rename message key to event</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_serializer</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>   <span class="c1"># use configured json serializer</span>
+
+<span class="n">my_formatter</span> <span class="o">=</span> <span class="n">CustomFormatter</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">logger_formatter</span><span class="o">=</span><span class="n">my_formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>For <strong>replacing the formatter entirely</strong>, you can subclass <code>BasePowertoolsFormatter</code>, implement <code>append_keys</code> method, and override <code>format</code> standard logging method. This ensures the current feature set of Logger like <a href="#capturing-lambda-context-info">injecting Lambda context</a> and <a href="#sampling-debug-logs">sampling</a> will continue to work.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You might need to implement <code>remove_keys</code> method if you make use of the feature too.</p>
+</div>
+<div class="tabbed-set" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">collect.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">aws_lambda_powertools.logging.formatter</span> <span class="kn">import</span> <span class="n">BasePowertoolsFormatter</span>
+</span>
+<span class="hll"><span class="k">class</span> <span class="nc">CustomFormatter</span><span class="p">(</span><span class="n">BasePowertoolsFormatter</span><span class="p">):</span>
+</span>    <span class="n">custom_format</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># arbitrary dict to hold our structured keys</span>
+
+<span class="hll">    <span class="k">def</span> <span class="nf">append_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">additional_keys</span><span class="p">):</span>
+</span>        <span class="c1"># also used by `inject_lambda_context` decorator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">custom_format</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">additional_keys</span><span class="p">)</span>
+
+    <span class="c1"># Optional unless you make use of this Logger feature</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">remove_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+</span>        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">custom_format</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="hll">    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># noqa: A003</span>
+</span>        <span class="sd">&quot;&quot;&quot;Format logging record as structured JSON str&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="p">),</span>
+                <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="n">record</span><span class="p">),</span>
+                <span class="s2">&quot;my_default_key&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">custom_format</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+<span class="hll"><span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="n">logger_formatter</span><span class="o">=</span><span class="n">CustomFormatter</span><span class="p">())</span>
+</span>
+<span class="nd">@logger</span><span class="o">.</span><span class="n">inject_lambda_context</span>
+<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><label for="__tabbed_22_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="hll">    <span class="nt">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-03 11:47:12,494&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;my_default_key&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;cold_start&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_memory_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_function_arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span> <span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h4 id="bring-your-own-json-serializer">Bring your own JSON serializer<a class="headerlink" href="#bring-your-own-json-serializer" title="Permanent link">&para;</a></h4>
+<p>By default, Logger uses <code>json.dumps</code> and <code>json.loads</code> as serializer and deserializer respectively. There could be scenarios where you are making use of alternative JSON libraries like <a href="https://github.com/ijl/orjson" target="_blank">orjson</a>.</p>
+<p>As parameters don't always translate well between them, you can pass any callable that receives a <code>Dict</code> and return a <code>str</code>:</p>
+<div class="tabbed-set" data-tabs="23:1"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><label for="__tabbed_23_1">collect.py</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">orjson</span>
+</span>
+<span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="hll"><span class="n">custom_serializer</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">dumps</span>
+</span><span class="hll"><span class="n">custom_deserializer</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span>
+</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="hll">            <span class="n">json_serializer</span><span class="o">=</span><span class="n">custom_serializer</span><span class="p">,</span>
+</span><span class="hll">            <span class="n">json_deserializer</span><span class="o">=</span><span class="n">custom_deserializer</span>
+</span><span class="p">)</span>
+
+<span class="c1"># when using parameters, you can pass a partial</span>
+<span class="c1"># custom_serializer=functools.partial(orjson.dumps, option=orjson.OPT_SERIALIZE_NUMPY)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h2 id="built-in-correlation-id-expressions">Built-in Correlation ID expressions<a class="headerlink" href="#built-in-correlation-id-expressions" title="Permanent link">&para;</a></h2>
+<p>You can use any of the following built-in JMESPath expressions as part of <a href="#setting-a-correlation-id">inject_lambda_context decorator</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Escaping necessary for the <code>-</code> character</p>
+<p>Any object key named with <code>-</code> must be escaped, for example <strong><code>request.headers."x-amzn-trace-id"</code></strong>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API_GATEWAY_REST</strong></td>
+<td><code>"requestContext.requestId"</code></td>
+<td>API Gateway REST API request ID</td>
+</tr>
+<tr>
+<td><strong>API_GATEWAY_HTTP</strong></td>
+<td><code>"requestContext.requestId"</code></td>
+<td>API Gateway HTTP API request ID</td>
+</tr>
+<tr>
+<td><strong>APPSYNC_RESOLVER</strong></td>
+<td><code>'request.headers."x-amzn-trace-id"'</code></td>
+<td>AppSync X-Ray Trace ID</td>
+</tr>
+<tr>
+<td><strong>APPLICATION_LOAD_BALANCER</strong></td>
+<td><code>'headers."x-amzn-trace-id"'</code></td>
+<td>ALB X-Ray Trace ID</td>
+</tr>
+<tr>
+<td><strong>EVENT_BRIDGE</strong></td>
+<td><code>"id"</code></td>
+<td>EventBridge Event ID</td>
+</tr>
+</tbody>
+</table>
 <h2 id="testing-your-code">Testing your code<a class="headerlink" href="#testing-your-code" title="Permanent link">&para;</a></h2>
+<h3 id="inject-lambda-context">Inject Lambda Context<a class="headerlink" href="#inject-lambda-context" title="Permanent link">&para;</a></h3>
 <p>When unit testing your code that makes use of <code>inject_lambda_context</code> decorator, you need to pass a dummy Lambda Context, or else Logger will fail.</p>
 <p>This is a Pytest sample that provides the minimum information necessary for Logger to succeed:</p>
-<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">fake_lambda_context_for_logger.py</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">fake_lambda_context_for_logger.py</label><div class="tabbed-content">
 <p>Note that dataclasses are available in Python 3.7+ only.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1992,7 +2484,7 @@
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">fake_lambda_context_for_logger_py36.py</label><div class="tabbed-content">
+<input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><label for="__tabbed_24_2">fake_lambda_context_for_logger_py36.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2036,6 +2528,10 @@
 </td></tr></table>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you're using pytest and are looking to assert plain log messages, do check out the built-in <a href="https://docs.pytest.org/en/latest/how-to/logging.html" target="_blank">caplog fixture</a>.</p>
+</div>
 <h3 id="pytest-live-log-feature">Pytest live log feature<a class="headerlink" href="#pytest-live-log-feature" title="Permanent link">&para;</a></h3>
 <p>Pytest Live Log feature duplicates emitted log messages in order to style log statements according to their levels, for this to work use <code>POWERTOOLS_LOG_DEDUPLICATION_DISABLED</code> env var.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">POWERTOOLS_LOG_DEDUPLICATION_DISABLED</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> pytest -o <span class="nv">log_cli</span><span class="o">=</span><span class="m">1</span>
@@ -2045,56 +2541,11 @@
 <p class="admonition-title">Warning</p>
 <p>This feature should be used with care, as it explicitly disables our ability to filter propagated messages to the root logger (if configured).</p>
 </div>
-<h2 id="built-in-correlation-id-expressions">Built-in Correlation ID expressions<a class="headerlink" href="#built-in-correlation-id-expressions" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>New in 1.12.0</p>
-</blockquote>
-<p>You can use any of the following built-in JMESPath expressions as part of <a href="#setting-a-correlation-id">inject_lambda_context decorator</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Escaping necessary for the <code>-</code> character</p>
-<p>Any object key named with <code>-</code> must be escaped, for example <strong><code>request.headers."x-amzn-trace-id"</code></strong>.</p>
-</div>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>API_GATEWAY_REST</strong></td>
-<td><code>"requestContext.requestId"</code></td>
-<td>API Gateway REST API request ID</td>
-</tr>
-<tr>
-<td><strong>API_GATEWAY_HTTP</strong></td>
-<td><code>"requestContext.requestId"</code></td>
-<td>API Gateway HTTP API request ID</td>
-</tr>
-<tr>
-<td><strong>APPSYNC_RESOLVER</strong></td>
-<td><code>'request.headers."x-amzn-trace-id"'</code></td>
-<td>AppSync X-Ray Trace ID</td>
-</tr>
-<tr>
-<td><strong>APPLICATION_LOAD_BALANCER</strong></td>
-<td><code>'headers."x-amzn-trace-id"'</code></td>
-<td>ALB X-Ray Trace ID</td>
-</tr>
-<tr>
-<td><strong>EVENT_BRIDGE</strong></td>
-<td><code>"id"</code></td>
-<td>EventBridge Event ID</td>
-</tr>
-</tbody>
-</table>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <p><strong>How can I enable boto3 and botocore library logging?</strong></p>
 <p>You can enable the <code>botocore</code> and <code>boto3</code> logs by using the <code>set_stream_logger</code> method, this method will add a stream handler
 for the given name and level to the logging module. By default, this logs all boto3 messages to stdout.</p>
-<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">log_botocore_and_boto3.py</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="25:1"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><label for="__tabbed_25_1">log_botocore_and_boto3.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2130,10 +2581,10 @@ for the given name and level to the logging module. By default, this logs all bo
 </td></tr></table>
 </div>
 </div>
-<p><strong>What's the difference between <code>structure_log</code> and <code>extra</code>?</strong></p>
-<p>Keys added with <code>structure_log</code> will persist across multiple log messages while keys added via <code>extra</code> will only be available in a given log message operation.</p>
+<p><strong>What's the difference between <code>append_keys</code> and <code>extra</code>?</strong></p>
+<p>Keys added with <code>append_keys</code> will persist across multiple log messages while keys added via <code>extra</code> will only be available in a given log message operation.</p>
 <p>Here's an example where we persist <code>payment_id</code> not <code>request_id</code>. Note that <code>payment_id</code> remains in both log messages while <code>booking_id</code> is only available in the first message.</p>
-<div class="tabbed-set" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">lambda_handler.py</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><label for="__tabbed_26_1">lambda_handler.py</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2145,22 +2596,26 @@ for the given name and level to the logging module. By default, this logs all bo
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s2">&quot;payment&quot;</span><span class="p">)</span>
-<span class="hll"><span class="n">logger</span><span class="o">.</span><span class="n">structure_logs</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">payment_id</span><span class="o">=</span><span class="s2">&quot;123456789&quot;</span><span class="p">)</span>
-</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">booking_id</span> <span class="o">=</span> <span class="n">book_flight</span><span class="p">()</span>
-<span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Flight booked successfully&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;booking_id&quot;</span><span class="p">:</span> <span class="n">booking_id</span><span class="p">})</span>
-</span><span class="k">except</span> <span class="n">BookingReservationError</span><span class="p">:</span>
-    <span class="o">...</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;goodbye&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="hll">    <span class="n">logger</span><span class="o">.</span><span class="n">append_keys</span><span class="p">(</span><span class="n">payment_id</span><span class="o">=</span><span class="s2">&quot;123456789&quot;</span><span class="p">)</span>
+</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">booking_id</span> <span class="o">=</span> <span class="n">book_flight</span><span class="p">()</span>
+<span class="hll">        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Flight booked successfully&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;booking_id&quot;</span><span class="p">:</span> <span class="n">booking_id</span><span class="p">})</span>
+</span>    <span class="k">except</span> <span class="n">BookingReservationError</span><span class="p">:</span>
+        <span class="o">...</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;goodbye&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><label for="__tabbed_19_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
+<input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><label for="__tabbed_26_2">Example CloudWatch Logs excerpt</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2181,7 +2636,7 @@ for the given name and level to the logging module. By default, this logs all bo
 <span class="normal">18</span>
 <span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;module&gt;:5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;module&gt;:10&quot;</span><span class="p">,</span>
     <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Flight booked successfully&quot;</span><span class="p">,</span>
     <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-12 14:09:10,859&quot;</span><span class="p">,</span>
     <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
@@ -2191,7 +2646,7 @@ for the given name and level to the logging module. By default, this logs all bo
 </span><span class="p">},</span>
 <span class="p">{</span>
     <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;module&gt;:6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;module&gt;:14&quot;</span><span class="p">,</span>
     <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;goodbye&quot;</span><span class="p">,</span>
     <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-12 14:09:10,860&quot;</span><span class="p">,</span>
     <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span>
@@ -2210,7 +2665,7 @@ for the given name and level to the logging module. By default, this logs all bo
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-04-09
+      Last update: 2021-05-05
     
   </small>
 </div>
@@ -2294,7 +2749,7 @@ for the given name and level to the logging module. By default, this logs all bo
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
